@@ -1,4 +1,4 @@
-import { rss2json } from '~/server/utils/rss2json'
+import { rss2json } from '#/utils/rss2json'
 import type { NewsItem } from '@shared/types'
 
 const realtime = defineSource(async () => {
