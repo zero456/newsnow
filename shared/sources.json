@@ -42,6 +42,14 @@
     "color": "red",
     "interval": 1800000
   },
+  "bbc": {
+    "name": "BBC 中文网",
+    "type": "realtime",
+    "column": "world",
+    "home": "https://www.bbc.com/zhongwen/simp",
+    "color": "red",
+    "interval": 600000
+  },
   "coolapk": {
     "title": "今日最热",
     "name": "酷安",
