@@ -49,6 +49,13 @@ export const originSources = {
     desc: "来自第三方网站: 早晨报",
     home: "https://www.zaobao.com",
   },
+  "bbc": {
+    name: "BBC 中文网",
+    type: "realtime",
+    column: "world",
+    color: "red",
+    home: "http://www.bbc.co.uk/zhongwen/simp/",
+  },
   "googlenews": {
     name: "谷歌新闻",
     type: "realtime",
