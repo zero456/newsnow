@@ -42,12 +42,12 @@
     "color": "red",
     "interval": 1800000
   },
-  "wikipedia": {
-    "name": "维基新闻",
+  "googlenews": {
+    "name": "谷歌新闻",
     "type": "realtime",
     "column": "world",
-    "home": "https://zh.wikipedia.org/wiki/Portal:%E6%96%B0%E8%81%9E%E5%8B%95%E6%85%8B",
-    "color": "gray",
+    "home": "https://news.google.com/",
+    "color": "blue",
     "interval": 600000
   },
   "coolapk": {

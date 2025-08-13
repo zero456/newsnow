@@ -49,12 +49,12 @@ export const originSources = {
     desc: "来自第三方网站: 早晨报",
     home: "https://www.zaobao.com",
   },
-  "wikipedia": {
-    name: "维基新闻",
+  "googlenews": {
+    name: "谷歌新闻",
     type: "realtime",
     column: "world",
-    color: "gray",
-    home: "https://zh.wikipedia.org/wiki/Portal:%E6%96%B0%E8%81%9E%E5%8B%95%E6%85%8B",
+    color: "blue",
+    home: "https://news.google.com/",
   },
   "coolapk": {
     name: "酷安",
