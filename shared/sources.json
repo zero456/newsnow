@@ -84,7 +84,7 @@
     "home": "https://wallstreetcn.com/",
     "color": "blue",
     "interval": 300000,
-    "title": "快讯"
+    "title": "实时快讯"
   },
   "wallstreetcn-quick": {
     "name": "华尔街见闻",
@@ -93,7 +93,7 @@
     "home": "https://wallstreetcn.com/",
     "color": "blue",
     "interval": 300000,
-    "title": "快讯"
+    "title": "实时快讯"
   },
   "wallstreetcn-news": {
     "name": "华尔街见闻",
@@ -101,7 +101,7 @@
     "home": "https://wallstreetcn.com/",
     "color": "blue",
     "interval": 1800000,
-    "title": "最新"
+    "title": "最新资讯"
   },
   "wallstreetcn-hot": {
     "name": "华尔街见闻",
@@ -110,7 +110,7 @@
     "home": "https://wallstreetcn.com/",
     "color": "blue",
     "interval": 1800000,
-    "title": "最热"
+    "title": "最热文章"
   },
   "36kr": {
     "redirect": "36kr-quick",
@@ -206,7 +206,7 @@
     "home": "https://bbs.pcbeta.com",
     "color": "blue",
     "interval": 300000,
-    "title": "Win11"
+    "title": "Windows 11"
   },
   "pcbeta-windows11": {
     "name": "远景论坛",
@@ -215,7 +215,7 @@
     "home": "https://bbs.pcbeta.com",
     "color": "blue",
     "interval": 300000,
-    "title": "Win11"
+    "title": "Windows 11"
   },
   "cls": {
     "redirect": "cls-telegraph",

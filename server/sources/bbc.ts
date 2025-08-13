@@ -3,32 +3,70 @@ import type { NewsItem } from "@shared/types"
 
 const realtime = defineSource(async () => {
   const baseURL = "https://www.bbc.com"
-  const html: string = await myFetch("https://www.bbc.com/zhongwen/simp")
-  const $ = cheerio.load(html)
+  const debugNews: NewsItem[] = []
 
-  const news: NewsItem[] = []
+  try {
+    const html: string = await myFetch("https://www.bbc.com/zhongwen/simp", {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      }
+    })
 
-  // Use a more general selector to get all potential article links
-  $("a[href^='/zhongwen/simp/']").each((_, el) => {
-    const url = $(el).attr("href")
+    debugNews.push({
+      id: "debug-html-start",
+      title: "DEBUG: Fetched HTML (first 500 chars)",
+      url: "#",
+      extra: {
+        hover: html.substring(0, 500),
+      }
+    })
 
-    // Filter out links that don't look like articles (must end with digits)
-    if (!url || !/-(\d+)$/.test(url)) {
-      return
-    }
+    const $ = cheerio.load(html)
+    const news: NewsItem[] = []
 
-    const title = $(el).find('h3, h2, span').first().text().trim()
+    $("a[href^='/zhongwen/simp/']").each((_, el) => {
+      const url = $(el).attr("href")
 
-    if (title && !news.some(item => item.title === title)) {
-      news.push({
-        url: `${baseURL}${url}`,
-        title,
-        id: url,
+      if (!url || !/-(\d+)$/.test(url)) {
+        return
+      }
+
+      const title = $(el).find('h3, h2, span').first().text().trim()
+
+      if (title && !news.some(item => item.title === title)) {
+        news.push({
+          url: `${baseURL}${url}`,
+          title,
+          id: url,
+        })
+      }
+    })
+
+    if (news.length === 0) {
+      debugNews.push({
+        id: "debug-no-items",
+        title: "DEBUG: No news items found after parsing.",
+        url: "#",
+        extra: {
+          hover: "The scraper ran but did not find any matching elements. The HTML might be different than expected."
+        }
       })
     }
-  })
 
-  return news.slice(0, 20) // Limit to 20 items to be safe
+    return [...debugNews, ...news.slice(0, 20)]
+
+  } catch (error: any) {
+    return [
+      {
+        id: "debug-error",
+        title: "DEBUG: An error occurred",
+        url: "#",
+        extra: {
+          hover: error.message,
+        }
+      }
+    ]
+  }
 })
 
 export default defineSource({
