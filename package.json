@@ -1,7 +1,7 @@
 {
   "name": "newsnow",
   "type": "module",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "private": true,
   "packageManager": "pnpm@10.5.2",
   "author": {
@@ -51,10 +51,12 @@
     "jose": "^6.0.8",
     "jotai": "^2.12.1",
     "md5": "^2.3.0",
+    "mysql2": "^3.11.4",
     "ofetch": "^1.4.1",
     "overlayscrollbars": "^2.11.1",
     "pnpm": "^10.5.2",
     "react": "^19.0.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^19.0.0",
     "react-use": "^17.6.0",
     "uncrypto": "^0.1.3",
